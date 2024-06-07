@@ -1,17 +1,21 @@
+// WAP to find factorial using recursion
+
 #include <stdio.h>
 
+int factorial(int n);
 
 int main() {
-    float side, area;
-
-    printf("Enter the length of one side of the square: ");
-    scanf("%f", &side);
-
-    // Calculate
-    area = calculateArea(side);
-
-   
-    printf("The area of the square with side %.2f is %.2f\n", side, area);
-
+    int number;
+    printf("Enter a number to find its factorial: ");
+    scanf("%d", &number);
+    printf("Factorial of %d is %d\n", number, factorial(number));
     return 0;
+}
+
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
 }
